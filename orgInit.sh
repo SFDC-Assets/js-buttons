@@ -1,6 +1,5 @@
-# sfdx force:org:create -f config/project-scratch-def.json -d 1 -s
-sfdx shane:org:create -f config/project-scratch-def.json -d 1 -s --json --userprefix js -o work.shop
-sfdx force:source:push
-sfdx force:mdapi:deploy -d destroy/ -w 20
-sfdx shane:user:password:set -l User -g User -p sfdx1234 --json
-sfdx force:org:open
+sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p js -e work.shop
+sf project deploy start
+sf project deploy start -d destroy/ -w 20
+sf demoutil user password set -p salesforce1 -g User -l User
+sf org open
